@@ -72,7 +72,6 @@ export const DragAndPasteUpload = ({ uploadHandler }) => {
   useEffect(() => {
     // dropRef.current.addEventListener("dragover", handleDragOver);
     // wait for window
-    console.log(window);
     window.addEventListener("dragover", handleDragOver);
     window.addEventListener("drop", handleDrop);
     window.addEventListener("dragenter", handleDragEnter);

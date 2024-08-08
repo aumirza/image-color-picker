@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { generatePalette } from "../Utils/pletteGenerator";
-import defImage from "../assets/img/default.jpg";
 import { MediaUploader } from "./MediaUploader";
 import { Canvas } from "./Canvas";
-import { PaletteBox } from "./PaletteBox";
+import { PaletteSection } from "./PaletteSection";
 import { ColorPicker } from "./ColorPicker";
+import defImage from "../assets/img/default.jpg";
 
 export const Main = () => {
   const [selectedColor, setSelectedColor] = useState("");
@@ -16,10 +16,10 @@ export const Main = () => {
 
   const [catchingHover, setCatchingHover] = useState(false);
 
-  const getPalette = () => {
+  const getPalette = useCallback(() => {
     const palette = generatePalette(imageData, colorCount);
     setPalette(palette);
-  };
+  }, [imageData, colorCount]);
 
   const colorCountHandler = (operation) => {
     switch (operation) {
@@ -48,7 +48,7 @@ export const Main = () => {
 
   useEffect(() => {
     if (imageData) getPalette();
-  }, [imageData, colorCount]);
+  }, [imageData, getPalette]);
 
   useEffect(() => {
     const initialImg = new Image();
@@ -79,7 +79,7 @@ export const Main = () => {
           )}
         </div>
 
-        <PaletteBox {...{ colorCountHandler, palette }} />
+        <PaletteSection {...{ colorCountHandler, palette, setSelectedColor }} />
       </div>
 
       <div className="flex flex-col sm:flex-row lg:flex-col p-2 z-10 ">
