@@ -8,10 +8,10 @@ export const PaletteSection = ({
   setSelectedColor,
 }) => {
   return (
-    <div className="py-2 px-1 rounded">
+    <div className="flex  flex-col py-2 px-1 rounded">
       <span className="text-lg ">Palette:</span>
 
-      <div className="flex justify-between ">
+      <div className="flex justify-between rotate-90 origin-top-right">
         <PaletteControls {...{ colorCountHandler }} />
         <PaletteGrid palette={palette} setSelectedColor={setSelectedColor} />
         <PaletteSaver palette={palette} />

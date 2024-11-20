@@ -5,6 +5,7 @@ import { Canvas } from "./Canvas";
 import { PaletteSection } from "./PaletteSection";
 import { ColorPicker } from "./ColorPicker";
 import defImage from "../assets/img/default.jpg";
+import { useResponsive } from "../hooks/useResponsive";
 
 export const Main = () => {
   const [selectedColor, setSelectedColor] = useState("");
@@ -15,6 +16,7 @@ export const Main = () => {
   const [imageData, setImageData] = useState(null);
 
   const [catchingHover, setCatchingHover] = useState(false);
+  const { minWidth } = useResponsive();
 
   const getPalette = useCallback(() => {
     const palette = generatePalette(imageData, colorCount);
@@ -60,8 +62,8 @@ export const Main = () => {
 
   return (
     <div className="flex flex-col lg:flex-row ">
-      <div className="z-10 shadow-lg hover:shadow-2xl p-2 mr-6  rounded-md  bg-white bg-opacity-25 backdrop-blur-sm">
-        <div className="flex justify-center shadow-sm h-[26rem] w-[26rem] rounded-md">
+      <div className="flex md:flex-col z-10 shadow-lg hover:shadow-2xl p-2 mr-6 rounded-md  bg-white bg-opacity-25 backdrop-blur-sm">
+        <div className="flex justify-center shadow-sm h-[21rem] w-[21rem] md:h-[26rem] md:w-[26rem] rounded-md">
           {loadedImg ? (
             <Canvas
               {...{
@@ -71,8 +73,8 @@ export const Main = () => {
                 setImageData,
                 setCatchingHover,
               }}
-              width={410}
-              height={410}
+              width={minWidth("MD") ? 410 : 320}
+              height={minWidth("MD") ? 410 : 320}
             />
           ) : (
             ""

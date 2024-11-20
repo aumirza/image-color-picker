@@ -1,7 +1,14 @@
-export const PaletteSaver = () => {
+export const PaletteSaver = ({ palette }) => {
+  const saveHandler = () => {
+    const savedPalettes =
+      JSON.parse(localStorage.getItem("savedPalettes")) || [];
+    savedPalettes.push(palette);
+    localStorage.setItem("savedPalettes", JSON.stringify(savedPalettes));
+  };
+
   return (
     <div className="">
-      <div className="flex mb-1 justify-center items-center h-10 w-10 rounded shadow hover:shadow-md hover:cursor-pointer bg-[rgba(255,255,255,.25)]">
+      <div className="flex mb-1 justify-center items-center h-8 w-8 md:h-10 md:w-10 rounded shadow hover:shadow-md hover:cursor-pointer bg-[rgba(255,255,255,.25)]">
         <svg
           fill="none"
           stroke="currentColor"
@@ -17,7 +24,10 @@ export const PaletteSaver = () => {
         </svg>
       </div>
 
-      <div className="flex justify-center items-center h-10 w-10 rounded shadow hover:shadow-md hover:cursor-pointer bg-[rgba(255,255,255,.25)]">
+      <div
+        className="flex justify-center items-center h-8 w-8 md:h-10 md:w-10 rounded shadow hover:shadow-md hover:cursor-pointer bg-[rgba(255,255,255,.25)]"
+        // onClick={saveHandler}
+      >
         <svg
           fill="none"
           stroke="currentColor"

@@ -16,7 +16,7 @@ const PaletteItem = ({ color, first, last, setSelectedColor }) => {
         (first ? "rounded-l" : last ? "rounded-r" : "")
       }
     >
-      <div className="abosulte flex justify-center items-center group-hover:opacity-100 opacity-0 transition-opacity duration-500 ease-in-out top-10 left-0 w-16 h-6 rounded-full bg-white border">
+      <div className="abosulte flex justify-center items-center group-hover:opacity-100 opacity-0 transition-opacity duration-500 ease-in-out top-10 left-0 w-8 h-5 md:w-16 md:h-6 rounded-full bg-white border">
         select
       </div>
     </div>
