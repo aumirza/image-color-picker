@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.900fa4fa.css",
-    "main.js": "/static/js/main.8339bbd3.js",
-    "static/media/huehunter-logo.png": "/static/media/huehunter-logo.cea38386009775efa74d.png",
-    "static/media/default.jpg": "/static/media/default.fda2e0bc43043be215ac.jpg",
-    "index.html": "/index.html",
-    "static/media/github.svg": "/static/media/github.3b21c250a99986431958daaa9246a45a.svg",
-    "main.900fa4fa.css.map": "/static/css/main.900fa4fa.css.map",
-    "main.8339bbd3.js.map": "/static/js/main.8339bbd3.js.map"
+    "main.css": "/image-color-picker/static/css/main.900fa4fa.css",
+    "main.js": "/image-color-picker/static/js/main.78cb18b6.js",
+    "static/media/huehunter-logo.png": "/image-color-picker/static/media/huehunter-logo.cea38386009775efa74d.png",
+    "static/media/default.jpg": "/image-color-picker/static/media/default.fda2e0bc43043be215ac.jpg",
+    "index.html": "/image-color-picker/index.html",
+    "static/media/github.svg": "/image-color-picker/static/media/github.3b21c250a99986431958daaa9246a45a.svg",
+    "main.900fa4fa.css.map": "/image-color-picker/static/css/main.900fa4fa.css.map",
+    "main.78cb18b6.js.map": "/image-color-picker/static/js/main.78cb18b6.js.map"
   },
   "entrypoints": [
     "static/css/main.900fa4fa.css",
-    "static/js/main.8339bbd3.js"
+    "static/js/main.78cb18b6.js"
   ]
 }
