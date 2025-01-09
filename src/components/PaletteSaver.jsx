@@ -26,7 +26,7 @@ export const PaletteSaver = ({ palette }) => {
 
       <div
         className="flex justify-center items-center h-8 w-8 md:h-10 md:w-10 rounded shadow hover:shadow-md hover:cursor-pointer bg-[rgba(255,255,255,.25)]"
-        // onClick={saveHandler}
+        onClick={saveHandler}
       >
         <svg
           fill="none"
