@@ -4,8 +4,8 @@ import { MediaUploader } from "./MediaUploader";
 import { Canvas } from "./Canvas";
 import { PaletteSection } from "./PaletteSection";
 import { ColorPicker } from "./ColorPicker";
-import defImage from "../assets/img/default.jpg";
 import { useResponsive } from "../hooks/useResponsive";
+import defImage from "../assets/img/default.jpg";
 
 export const Main = () => {
   const [selectedColor, setSelectedColor] = useState("");
@@ -61,9 +61,9 @@ export const Main = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row ">
-      <div className="flex md:flex-col z-10 shadow-lg hover:shadow-2xl p-2 mr-6 rounded-md  bg-white bg-opacity-25 backdrop-blur-sm">
-        <div className="flex justify-center shadow-sm h-[21rem] w-[21rem] md:h-[26rem] md:w-[26rem] rounded-md">
+    <div className="flex flex-col gap-5 lg:flex-row">
+      <div className="z-10 flex flex-col items-center justify-center p-5 pb-2 bg-white bg-opacity-25 rounded-md shadow-lg hover:shadow-2xl backdrop-blur-sm">
+        <div className="flex justify-center shadow-sm h-[21rem] w-[21rem] md:h-[24rem] md:w-[24rem] rounded-md">
           {loadedImg ? (
             <Canvas
               {...{
@@ -73,8 +73,8 @@ export const Main = () => {
                 setImageData,
                 setCatchingHover,
               }}
-              width={minWidth("MD") ? 410 : 320}
-              height={minWidth("MD") ? 410 : 320}
+              width={minWidth("MD") ? 384 : 320}
+              height={minWidth("MD") ? 384 : 320}
             />
           ) : (
             ""
@@ -84,7 +84,7 @@ export const Main = () => {
         <PaletteSection {...{ colorCountHandler, palette, setSelectedColor }} />
       </div>
 
-      <div className="flex flex-col sm:flex-row lg:flex-col p-2 z-10 ">
+      <div className="z-10 flex flex-col items-stretch gap-5 md:flex-row lg:flex-col ">
         <ColorPicker
           tempColor={catchingHover ? tempColor : selectedColor}
           selectedColor={selectedColor}
