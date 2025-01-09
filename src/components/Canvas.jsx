@@ -20,8 +20,6 @@ export const Canvas = ({
   const boxRef = useRef();
   const touchCatcher = createRef();
 
-  const [_, setPos] = useState([width / 2 - 20, height / 2 - 20]);
-
   const [ctx, setCtx] = useState(null);
 
   const getColor = useCallback(
@@ -33,14 +31,12 @@ export const Canvas = ({
   );
 
   const onMouseDown = (e) => {
-    setPos([e.nativeEvent.offsetX, e.nativeEvent.offsetY]);
     setSelectedColor(getColor(e.nativeEvent.offsetX, e.nativeEvent.offsetY));
   };
 
   const onMouseMove = (e) => {
     let color = getColor(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
     setTempColor(color);
-    setPos([e.nativeEvent.offsetX, e.nativeEvent.offsetY]);
   };
 
   const onMouseEnter = () => {
@@ -69,7 +65,6 @@ export const Canvas = ({
       const [x, y] = calcTouchCoordinates(e);
       let color = getColor(x, y);
       setSelectedColor(color);
-      setPos([x, y]);
     },
     [calcTouchCoordinates, setSelectedColor, getColor]
   );
