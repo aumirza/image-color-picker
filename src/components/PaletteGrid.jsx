@@ -12,11 +12,11 @@ const PaletteItem = ({ color, first, last, setSelectedColor }) => {
       style={{ background: bgColor }}
       onClick={colourSelectHandler}
       className={
-        "hover:cursor-pointer group bg-blue-500 flex-grow " +
+        "relative hover:cursor-pointer group bg-blue-500 flex-grow min-w-[1rem] " +
         (first ? "rounded-l" : last ? "rounded-r" : "")
       }
     >
-      <div className="abosulte flex justify-center items-center group-hover:opacity-100 opacity-0 transition-opacity duration-500 ease-in-out top-10 left-0 w-8 h-5 md:w-16 md:h-6 rounded-full bg-white border">
+      <div className="absolute left-0 flex items-center justify-center h-5 p-0 transition-opacity duration-500 ease-in-out bg-white border rounded-full opacity-0 -top-8 abosulte group-hover:opacity-100 md:w-16 md:h-6">
         select
       </div>
     </div>
@@ -25,7 +25,7 @@ const PaletteItem = ({ color, first, last, setSelectedColor }) => {
 
 export const PaletteGrid = ({ palette, setSelectedColor }) => {
   return (
-    <div className="flex flex-grow mx-2 rounded">
+    <div className="flex flex-grow w-full mx-2 rounded">
       {palette.map((colour, i) => (
         <PaletteItem
           setSelectedColor={setSelectedColor}
