@@ -1,6 +1,8 @@
 {
   "name": "huehunter",
   "version": "1.0.0",
+  "description": "sleek and intuitive tool to extract and explore colors from any image effortlessly.",
+  "homepage": "https://gh.ahmadullah.in/image-color-picker/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
