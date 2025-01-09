@@ -14,24 +14,24 @@ export const ColorPicker = ({ selectedColor, tempColor }) => {
     : "#000";
 
   return (
-    <div className="rounded-md w-72 shadow-md hover:shadow-xl border-[rgba(255,255,255,.20)] bg-[rgba(255,255,255,.25)]">
+    <div className="rounded-md shadow-md hover:shadow-xl border-[rgba(255,255,255,.20)] bg-[rgba(255,255,255,.25)]">
       <div className="h-10 rounded-t flex items-center px-3 bg-[rgba(255,255,255,.5)]">
         <div className="flex">
-          <div className="h-3 w-3 mx-1 rounded-full bg-red-400"></div>
-          <div className="h-3 w-3 mx-1 rounded-full bg-orange-300"></div>
-          <div className="h-3 w-3 mx-1 rounded-full bg-green-500"></div>
+          <div className="w-3 h-3 mx-1 bg-red-400 rounded-full"></div>
+          <div className="w-3 h-3 mx-1 bg-orange-300 rounded-full"></div>
+          <div className="w-3 h-3 mx-1 bg-green-500 rounded-full"></div>
         </div>
       </div>
 
-      <div className="flex py-5 px-3">
+      <div className="flex px-3 py-5">
         <div className="mr-5">
           <div
             style={{ background: selectedColorHex }}
-            className="h-16 w-16 rounded-md shadow-md"
+            className="w-16 h-16 rounded-md shadow-md"
           ></div>
           <div
             style={{ background: tempColorHex }}
-            className="h-10 w-16 rounded-md mt-3 shadow-md"
+            className="w-16 h-10 mt-3 rounded-md shadow-md"
           ></div>
         </div>
 
