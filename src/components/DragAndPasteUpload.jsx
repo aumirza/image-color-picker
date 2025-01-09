@@ -39,35 +39,36 @@ export const DragAndPasteUpload = ({ uploadHandler }) => {
     };
   }, [pasteHandler]);
 
-  const handleDragOver = (e) => {
+  const handleDragOver = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
-  };
+  }, []);
 
-  const handleDragEnter = (e) => {
+  const handleDragEnter = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
 
     if (e.target !== overlayRef.current) setDragging(true);
-  };
+  }, []);
 
-  const handleDragLeave = (e) => {
+  const handleDragLeave = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
 
     if (e.target === overlayRef.current) setDragging(false);
-  };
+  }, []);
 
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    const { files } = e.dataTransfer;
-
-    setDragging(false);
-
-    if (files?.length) uploadHandler(files[0]);
-  };
+  const handleDrop = useCallback(
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setDragging(false);
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        uploadHandler(e.dataTransfer.files[0]);
+      }
+    },
+    [uploadHandler]
+  );
 
   useEffect(() => {
     // dropRef.current.addEventListener("dragover", handleDragOver);
@@ -83,12 +84,12 @@ export const DragAndPasteUpload = ({ uploadHandler }) => {
     //   window.removeEventListener("dragenter", handleDragEnter);
     //   window.removeEventListener("dragleave", handleDragLeave);
     // };
-  }, []);
+  }, [handleDragEnter, handleDragLeave, handleDragOver, handleDrop]);
 
   return dragging ? (
-    <div ref={overlayRef} className="fixed top-0 left-0 z-10 h-full w-full p-3">
-      <div className="flex justify-center items-center h-full bg-black bg-opacity-20 border-2 border-dashed">
-        <span className="text-white text-4xl">Drop Here</span>
+    <div ref={overlayRef} className="fixed top-0 left-0 z-10 w-full h-full p-3">
+      <div className="flex items-center justify-center h-full bg-black border-2 border-dashed bg-opacity-20">
+        <span className="text-4xl text-white">Drop Here</span>
       </div>
     </div>
   ) : (
