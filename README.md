@@ -63,6 +63,9 @@ npm run start
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=aumirza/image-color-picker@github)](https://gitads.dev/v1/ad-track?source=aumirza/image-color-picker@github)
+
 ## Authors
 
 - [@aumirza](https://www.github.com/aumirza)
