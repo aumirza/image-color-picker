@@ -2,6 +2,8 @@
 <img height="200" alt="HueHunter" src="./src/assets/img/huehunter-logo.png" />
 </p>
 
+<!-- GitAds-Verify: T8YX4JJHKWWKQYQQC3VWXSJQLSKUCQVW -->
+
 # HueHunter
 
 sleek and intuitive tool to extract and explore colors from any image effortlessly.
